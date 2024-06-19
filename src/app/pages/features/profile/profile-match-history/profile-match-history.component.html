@@ -1,0 +1,70 @@
+<div class="mt-4">
+  <div
+    *ngFor="let match of matchHistory; let i = index"
+    class="mt-2 md:mt-4 md:flex align-items-center justify-content-between border-1 border-round-md px-3 py-2 text-gray-300"
+    [ngClass]="isWinner(i) ? 'border-green-400' : 'border-red-400'"
+  >
+    <div class="md:flex gap-2">
+      <div class="flex align-items-center gap-3">
+        <a
+          [title]="'Xem trang cá nhân của ' + match.winnerPlayer?.displayName"
+          [routerLink]="'/players/' + match.winnerPlayer?.playerId"
+          [ngClass]="isWinner(i) ? 'text-blue-500' : 'text-gray-200'"
+          class="flex align-items-center gap-2 font-semibold"
+        >
+          <img
+            class="w-2rem h-2rem bg-cover border-circle"
+            [src]="
+              match.winnerPlayer?.profileImage ||
+              'assets/images/profile_images/default.png'
+            "
+          />
+          {{ match.winnerPlayer?.displayName }}
+        </a>
+        <span class="font-bold text-lg"> - </span>
+        <a
+          [title]="'Xem trang cá nhân của ' + match.loserPlayer?.displayName"
+          [routerLink]="'/players/' + match.loserPlayer?.playerId"
+          [ngClass]="!isWinner(i) ? 'text-blue-500' : 'text-gray-200'"
+          class="flex align-items-center gap-2 font-semibold"
+          ><img
+            class="w-2rem h-2rem bg-cover border-circle"
+            [src]="
+              match.loserPlayer?.profileImage ||
+              'assets/images/profile_images/default.png'
+            "
+          />
+          {{ match.loserPlayer?.displayName }}</a
+        >
+      </div>
+      <div class="py-2 md:flex align-items-center md:py-0 md:gap-4 md:px-2">
+        <div class="text-gray-400 font-light py-1">
+          {{
+            match.matchType === "FRIENDLY" ? "Trận giao hữu" : "Trận xếp hạng"
+          }}
+        </div>
+        <div
+          class="flex align-items-center text-gray-400 md:text-sm gap-2 py-1"
+        >
+          <i class="pi pi-clock md:hidden"></i>
+          {{ getDateFormatted(match.finishedAt) }}
+        </div>
+        <div class="py-1 text-yellow-500 flex align-items-center">
+          <span
+            class="mr-2"
+            [ngClass]="isWinner(i) ? 'text-green-500' : 'text-red-600'"
+            >{{ isWinner(i) ? "+" : "-" }}</span
+          >
+          {{ match.betAmount }}
+          <i class="ml-1 pi pi-bitcoin"></i>
+        </div>
+      </div>
+    </div>
+    <div
+      [ngClass]="isWinner(i) ? 'text-green-500' : 'text-red-600'"
+      class="flex align-items-center font-semibold"
+    >
+      {{ isWinner(i) ? "Thắng" : "Thua" }}
+    </div>
+  </div>
+</div>

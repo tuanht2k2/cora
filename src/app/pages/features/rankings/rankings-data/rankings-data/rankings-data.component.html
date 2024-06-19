@@ -1,0 +1,45 @@
+<div class="scroll-table table">
+  <p-table [value]="data">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>STT</th>
+        <th>Người chơi</th>
+        <th>Cấp độ</th>
+        <th>Điểm số</th>
+        <th>Xếp hạng</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+      <tr class="table-row">
+        <td class="text-sm">
+          <div class="table-col-content">{{ rowIndex + 1 }}</div>
+        </td>
+        <td class="text-sm">
+          <a
+            class="table-col-content flex align-items-center"
+            [routerLink]="'/players/' + item.playerId"
+            [title]="'Xem thông tin người chơi: ' + item.displayName"
+            ><img
+              class="mr-2 w-1rem border-circle"
+              [src]="
+                item.profileImage || 'assets/images/profile_images/default.png'
+              "
+            />
+            {{ item.displayName }}</a
+          >
+        </td>
+        <td class="text-sm">
+          <div class="table-col-content">{{ item.level || 0 }}</div>
+        </td>
+        <td class="text-sm">
+          <div class="table-col-content">{{ item.score }}</div>
+        </td>
+        <td class="text-sm">
+          <div class="table-col-content">
+            {{ getRankingName(item.ranking) }}
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

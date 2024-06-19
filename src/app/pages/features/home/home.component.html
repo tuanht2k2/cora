@@ -1,0 +1,28 @@
+<div>
+  <div>{{ player.score }}</div>
+  <div>{{ player.ranking }}</div>
+  <p-carousel
+    [showIndicators]="false"
+    [value]="carouselItems"
+    [numVisible]="1"
+    [circular]="false"
+  >
+    <ng-template let-item pTemplate="item">
+      <div class="flex justify-content-center">
+        <div
+          class="border-1 border-green-100 border-round-xl w-full sm:w-30rem p-1 py-3 md:p-2 md:py-5 flex flex-column align-items-center bg-black-alpha-20"
+        >
+          <h1 class="text-orange-600 text-center font-semibold">
+            {{ item.title }}
+          </h1>
+          <button
+            class="mt-3 bg-none border-circle flex align-items-center overflow-hidden"
+            (click)="findMatch(item.matchType)"
+          >
+            <img [src]="getIconSrc('play')" class="h-3rem" />
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

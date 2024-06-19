@@ -1,0 +1,14 @@
+@import "../styles/variables";
+
+.item-active,
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.145) !important;
+
+  i {
+    color: $green-highlight !important;
+  }
+
+  * {
+    color: var(--gray-100) !important;
+  }
+}

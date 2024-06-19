@@ -1,0 +1,33 @@
+@import "variables";
+
+.p-tabview-title {
+  padding: 0.8rem;
+}
+
+.p-tabview {
+  .p-tabview-panels {
+    margin-top: 10px;
+    background: none;
+  }
+
+  .p-tabview-nav {
+    border: none;
+    background: none;
+
+    .p-tab-panel-header {
+      padding: 10px;
+      animation-duration: 300ms;
+    }
+
+    li .p-tabview-nav-link {
+      background: none;
+      color: var(--gray-200);
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+        box-shadow 0.2s, outline-color 0.2s;
+    }
+
+    li.p-highlight .p-tabview-nav-link {
+      color: $text-active-blue;
+    }
+  }
+}

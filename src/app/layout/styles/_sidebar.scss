@@ -1,0 +1,24 @@
+p-sidebar .p-component-overlay {
+  display: none;
+}
+
+.p-sidebar {
+  background-color: $sidebar-bg-dark;
+  padding: 10px;
+
+  .p-sidebar-close {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: rgb(221, 208, 191);
+    }
+  }
+}
+.p-sidebar-mask {
+  display: none;
+}

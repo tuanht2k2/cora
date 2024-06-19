@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "app/layout/styles/variables";
+@import "app/layout/styles/sidebar";
+@import "app/layout/styles/scrollbar";
+@import "app/layout/styles/tabview";
+@import "app/layout/styles/prime_custom";
+@import "app/layout/styles/table";
+@import "app/layout/styles/paginator";
+@import "app/layout/styles/dialog";
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 
 * {
   margin: 0;
@@ -8,7 +16,40 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
+}
+
+button {
+  animation-duration: 300ms;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition-duration: 300ms;
+}
+
+button {
+  cursor: pointer;
+}
+
+.text-green-highlight {
+  color: $green-highlight;
+}
+
+.text-green-highlight-gradient {
+  background: linear-gradient(330deg, $green-highlight, #0b9694);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-none {
+  background: none;
 }

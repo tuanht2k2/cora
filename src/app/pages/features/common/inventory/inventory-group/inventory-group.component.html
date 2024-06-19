@@ -1,0 +1,10 @@
+<div
+  class="mt-2 bg-black-alpha-20 p-3 border-round-xl border-blue-900 border-1"
+>
+  <span class="text-gray-300">{{ getTypeItemName(groupItem.itemType) }}</span>
+  <div class="mt-2 grid gutter-3">
+    <div class="col col-3 md:col-1 p-1" *ngFor="let item of groupItem.items">
+      <app-inventory-group-item [item]="item"></app-inventory-group-item>
+    </div>
+  </div>
+</div>

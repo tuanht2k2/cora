@@ -1,1 +1,33 @@
-<p>header works!</p>
+<header
+  class="sticky top-0 left-0 shadow-1 border-bottom-1 border-green-300 px-2 md:px-6 py-2 flex align-items-center justify-content-between"
+>
+  <div class="flex items-center">
+    <img src="assets/images/logo.png" alt="logo" />
+    <span
+      class="ml-2 font-serif text-green-highlight-gradient font-bold text-2xl"
+      >CORA</span
+    >
+  </div>
+  <div class="flex align-items-center">
+    <div>
+      <div class="flex align-items-center gap-2 font-semibold text-orange-400">
+        1.500 <i class="pi pi-bitcoin text-xl"></i>
+      </div>
+      <div
+        class="mt-1 flex align-items-center gap-2 font-semibold text-teal-400"
+      >
+        3.200 <img class="h-1rem" [src]="getIconSrc('diamond')" />
+      </div>
+    </div>
+
+    <a
+      routerLink="/player/"
+      class="bg-rank-4 bg-cover p-2 sm:px-3 cursor-pointer"
+    >
+      <img
+        class="w-3rem h-3rem sm:w-14 sm:h-14 border-circle"
+        src="assets/images/profile_images/default.png"
+      />
+    </a>
+  </div>
+</header>

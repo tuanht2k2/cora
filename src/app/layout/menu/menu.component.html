@@ -1,0 +1,58 @@
+<footer class="hidden md:block">
+  <ul
+    class="w-full border-round-md bg-blue-500/10 flex align-items-center justify-content-center"
+  >
+    <li class="p-2" *ngFor="let item of menuItems">
+      <a
+        class="border-round-lg border-none hover:bg-blue-900 animation-duration-500 p-3 py-2 flex align-items-center menu-item"
+        [routerLink]="item.path"
+        routerLinkActive="item-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="sidebarVisible = false"
+        ><i
+          class="text-gray-400 group-hover:text-blue-800"
+          [class]="item.icon"
+        ></i>
+        <span
+          class="ml-2 font-semibold text-nowrap group-hover:text-blue-800 text-gray-400"
+          >{{ item.label }}</span
+        ></a
+      >
+    </li>
+  </ul>
+</footer>
+<button
+  class="ml-2 mb-2 shadow-2 border-none p-3 border-round-xl bg-blue-800 hover:bg-blue-700 animation-duration-300 text-gray-200 flex items-center justify-center cursor-pointer md:hidden"
+  (click)="sidebarVisible = !sidebarVisible"
+>
+  <i class="pi pi-arrow-right"></i>
+</button>
+<p-sidebar [(visible)]="sidebarVisible">
+  <ng-template pTemplate="header">
+    <img src="assets/images/logo.png" alt="logo" />
+    <div class="flex-1 p-2 text-green-highlight-gradient font-bold text-xl">
+      CORA
+    </div>
+  </ng-template>
+  <div class="mt-4 border-top-1 border-gray-500">
+    <ul class="w-full rounded-md">
+      <li class="py-1" *ngFor="let item of menuItems">
+        <a
+          class="border-round-lg border-none hover:bg-blue-900 animation-duration-500 p-3 py-3 flex align-items-center menu-item"
+          [routerLink]="item.path"
+          routerLinkActive="item-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="sidebarVisible = false"
+          ><i
+            class="text-gray-400 group-hover:text-blue-800"
+            [class]="item.icon"
+          ></i>
+          <span
+            class="ml-2 font-semibold text-nowrap group-hover:text-blue-800 text-gray-400"
+            >{{ item.label }}</span
+          ></a
+        >
+      </li>
+    </ul>
+  </div>
+</p-sidebar>

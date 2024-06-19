@@ -1,0 +1,30 @@
+<div class="py-2">
+  <span class="text-gray-300 font-semibold">Trận xếp hạng</span>
+  <div class="mt-2 grid">
+    <div class="col-12 md:col-4 lg:col-3" *ngFor="let rankItem of rankMatch">
+      <app-profile-overview-item [data]="rankItem"> </app-profile-overview-item>
+    </div>
+  </div>
+</div>
+
+<div class="py-2">
+  <span class="text-gray-300 font-semibold">Trận giao hữu</span>
+  <div class="mt-2 grid">
+    <div
+      class="col-12 md:col-4 lg:col-3"
+      *ngFor="let friendlyItem of friendlyMatch"
+    >
+      <app-profile-overview-item [data]="friendlyItem">
+      </app-profile-overview-item>
+    </div>
+  </div>
+</div>
+
+<div class="py-2">
+  <span class="text-gray-300 font-semibold">Tất cả</span>
+  <div class="mt-2 grid">
+    <div class="col-12 md:col-4 lg:col-3" *ngFor="let allItem of allMatch">
+      <app-profile-overview-item [data]="allItem"> </app-profile-overview-item>
+    </div>
+  </div>
+</div>

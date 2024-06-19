@@ -1,0 +1,38 @@
+<div class="mt-3 w-full flex justify-content-center">
+  <h2
+    class="rankings-title relative text-gray-300 font-normal border-round-xl p-2 px-3 pl-6 flex align-items-center"
+  >
+    <img class="h-3rem" [src]="getIconSrc('ufo')" />
+    Bảng xếp hạng
+  </h2>
+</div>
+<div class="w-full pt-3 md:pt-4 flex flex-column align-items-center">
+  <div class="w-full max-w-40rem border-round-lg p-2 md:px-4 bg-black-alpha-10">
+    <p-tabView>
+      <p-tabPanel header="">
+        <ng-template pTemplate="header">
+          <div class="px-3 py-2 animation-duration-300">
+            <img [src]="getIconSrc('global')" class="icon" />
+            <span class="ml-2">Thế giới</span>
+          </div>
+        </ng-template>
+        <app-rankings-data [data]="rankings"></app-rankings-data>
+      </p-tabPanel>
+      <p-tabPanel header="Bạn bè">
+        <ng-template pTemplate="header">
+          <div class="px-3 py-2 animation-duration-300">
+            <img [src]="getIconSrc('friends')" class="icon" />
+            <span class="ml-2">Bạn bè</span>
+          </div>
+        </ng-template>
+        <app-rankings-data [data]="rankings"></app-rankings-data>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+  <p-paginator
+    [rows]="pageSize"
+    [totalRecords]="5"
+    [first]="0"
+    class="mt-3"
+  ></p-paginator>
+</div>

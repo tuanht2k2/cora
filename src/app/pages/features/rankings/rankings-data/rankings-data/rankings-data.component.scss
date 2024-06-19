@@ -1,0 +1,36 @@
+.scroll-table {
+  max-height: calc(100vh - 340px);
+  overflow: auto;
+}
+
+th {
+  font-weight: 100;
+}
+
+.table-row {
+  td {
+    padding-right: 5px;
+    color: rgb(252, 254, 255);
+    font-weight: 400;
+
+    & a {
+      color: rgb(252, 254, 255);
+      font-weight: 400;
+    }
+
+    .table-col-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 8px 3px;
+      background: rgba(2, 79, 88, 0.638);
+      border-radius: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .scroll-table {
+    max-height: calc(100vh - 350px);
+  }
+}
