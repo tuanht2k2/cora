@@ -1,1 +1,28 @@
-<router-outlet></router-outlet>
+<div class="public-container relative">
+  <div class="absolute pt-2 pl-5">
+    <img src="../../../assets/images/logo.png" />
+  </div>
+  <div class="desktop-bgr"></div>
+  <div class="router">
+    <div class="w-18rem">
+      <router-outlet></router-outlet>
+      <div class="py-4 border-top-1 border-blue-700">
+        <div class="mb-4 font-semibold text-gray-300 text-sm">
+          Hoặc đăng nhập bằng
+        </div>
+        <div class="flex align-items-center gap-2">
+          <button
+            class="p-2 px-4 border-round-md border-none bg-blue-900 flex align-items-center font-bold gap-2 text-gray-200"
+          >
+            <img [src]="getIconSrc('google')" class="w-1rem" />Google
+          </button>
+          <button
+            class="p-2 px-4 border-round-md border-none bg-blue-900 flex align-items-center font-bold gap-2 text-gray-200"
+          >
+            <img [src]="getIconSrc('facebook')" class="w-1rem" />Google
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

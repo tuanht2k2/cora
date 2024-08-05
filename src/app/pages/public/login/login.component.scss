@@ -1,0 +1,21 @@
+.btn-login {
+  background: rgb(71, 122, 249);
+  background: linear-gradient(
+    214deg,
+    rgba(71, 122, 249, 1) 0%,
+    rgba(61, 105, 214, 1) 57%,
+    rgba(53, 87, 173, 1) 100%
+  );
+}
+
+.field {
+  position: relative;
+  margin-bottom: 2rem;
+
+  & small {
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+}

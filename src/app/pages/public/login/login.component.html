@@ -1,1 +1,58 @@
-<p>login works!</p>
+<div class="py-3">
+  <h1 class="text-gray-200 font-medium">ĐĂNG NHẬP</h1>
+  <form
+    [formGroup]="loginForm"
+    class="py-3 flex flex-column align-items-center"
+  >
+    <div class="field w-full">
+      <span class="block mb-1 text-gray-400 text-xs"> Tên đăng nhập </span>
+      <input
+        pInputText
+        formControlName="playerName"
+        class="p-2 border-round-md w-full border-none"
+      />
+      <small
+        *ngIf="hasErrorInput('playerName', 'required')"
+        class="text-red-500"
+        >Giá trị không được để trống</small
+      >
+      <small
+        *ngIf="hasErrorInput('playerName', 'maxlength')"
+        class="text-red-500"
+        >Tên đăng nhập phải ngắn hơn 20 ký tự</small
+      >
+      <small
+        *ngIf="hasErrorInput('playerName', 'minlength')"
+        class="text-red-500"
+        >Tên đăng nhập phải dài hơn 6 ký tự</small
+      >
+    </div>
+    <div class="field w-full">
+      <span class="block mb-1 text-gray-400 text-xs"> Mật khẩu </span>
+      <input
+        pInputText
+        formControlName="password"
+        type="password"
+        class="p-2 border-round-md w-full"
+      />
+      <small *ngIf="hasErrorInput('password', 'required')" class="text-red-500"
+        >Giá trị không được để trống</small
+      >
+      <small *ngIf="hasErrorInput('password', 'maxlength')" class="text-red-500"
+        >Mật khẩu phải ngắn hơn 20 ký tự</small
+      >
+      <small *ngIf="hasErrorInput('password', 'minlength')" class="text-red-500"
+        >Mật khẩu phải dài hơn 6 ký tự</small
+      >
+    </div>
+
+    <button
+      class="btn-login p-3 px-4 border-round-xl cursor-pointer border-none shadow-2 text-gray-200 font-semibold"
+    >
+      ĐĂNG NHẬP
+    </button>
+  </form>
+  <a routerLink="/register" class="font-semibold text-gray-400"
+    >Đã có tài khoản?</a
+  >
+</div>

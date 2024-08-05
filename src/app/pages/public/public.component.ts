@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { getIconSrcService } from '../../utils/exportDepends';
 
 @Component({
   selector: 'app-public',
@@ -9,4 +10,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   templateUrl: './public.component.html',
   styleUrl: './public.component.scss',
 })
-export class PublicComponent {}
+export class PublicComponent {
+  getIconSrc(iconName: string) {
+    return getIconSrcService(iconName);
+  }
+}
